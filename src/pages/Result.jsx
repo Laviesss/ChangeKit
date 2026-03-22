@@ -12,12 +12,12 @@ import CommitList from '../components/CommitList';
 import AdPlaceholder from '../components/AdPlaceholder';
 import PaywallBanner from '../components/PaywallBanner';
 import DonateButton from '../components/DonateButton';
-import { ArrowLeft, RefreshCw, Loader2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, RefreshCw, Loader2, Sparkles } from 'lucide-react';
 
 export default function Result() {
   const location = useLocation();
   const navigate = useNavigate();
-  const isPro = usePro();
+  const { isPro } = usePro();
   const repoData = location.state;
 
   const [commits, setCommits] = useState([]);
@@ -25,21 +25,12 @@ export default function Result() {
   const [error, setError] = useState(null);
   const [activeFormat, setActiveFormat] = useState('modrinth');
   const [formattedContent, setFormattedContent] = useState('');
-  const [showSuccessToast, setShowSuccessToast] = useState(false);
 
   useEffect(() => {
     if (!repoData) {
       navigate('/');
       return;
     }
-
-    // Check for pro=activated param which might have come from redirect
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('pro') === 'activated') {
-      setShowSuccessToast(true);
-      setTimeout(() => setShowSuccessToast(false), 5000);
-    }
-
     loadCommits();
   }, [repoData, isPro]);
 
@@ -106,16 +97,6 @@ export default function Result() {
 
   return (
     <div className="min-h-screen flex flex-col max-w-7xl mx-auto px-6 py-12 lg:py-20 relative">
-      {/* Pro Success Toast */}
-      {showSuccessToast && (
-        <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-top-4 duration-500">
-          <div className="bg-[#5B2D8E] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-purple-400/30">
-            <CheckCircle2 className="h-5 w-5" />
-            <span className="font-bold">Pro unlocked! Enjoy unlimited commits 🎉</span>
-          </div>
-        </div>
-      )}
-
       <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
         <div className="space-y-2">
           <Link to="/" className="flex items-center text-gray-500 hover:text-white transition-colors text-sm font-semibold group mb-2">

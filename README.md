@@ -9,20 +9,23 @@ Hey! This is your personal guide for setting up and deploying ChangeKit. Follow 
 - Leave all settings default, click **Deploy**.
 - Copy the live URL once deployed (e.g., `changekit.vercel.app`).
 
-## 2. Set up Lemon Squeezy
+## 2. Set up Payhip (Payments)
 
-- Go to [lemonsqueezy.com](https://lemonsqueezy.com) and create a free account.
-- Create a new **Store**.
-- Create a **Product** → type: "Single payment" → price: **$4.99**.
-- Go to the product's checkout page and copy the checkout URL.
-- Paste it into `src/utils/config.js` as `LEMON_SQUEEZY_URL`.
-- In Lemon Squeezy dashboard → **Settings** → **Redirects** → set success URL to: `https://your-vercel-url.vercel.app/?pro=activated`
+- Go to [payhip.com](https://payhip.com) and create a free account.
+- Create a new **Product** → type: "Software" or "Digital Product" → price: **$4.99**.
+- Ensure you enable "License Keys" for the product.
+- Copy the product page URL.
+- Paste it into `src/utils/config.js` as `PAYHIP_PRODUCT_URL`.
+- In Payhip dashboard → **Account** → **Settings** → **Developer** → copy your **API Key**.
+- Paste it into `src/utils/config.js` as `PAYHIP_API_KEY`.
+- **Note:** Since this is a serverless app, the API key is exposed on the frontend. This is okay for license verification as it's read-only for that purpose, but keep it in mind.
 
 ## 3. Set up Google AdSense
 
 - Go to [adsense.google.com](https://adsense.google.com) and apply with your Vercel URL.
-- Once approved, create ad units and copy the AdSense script tag.
-- Replace the `<AdPlaceholder />` components in the code with real AdSense units.
+- Once approved, create ad units and copy the AdSense client ID and slot IDs.
+- Update `src/utils/config.js` with `ADSENSE_CLIENT_ID`, `ADSENSE_SLOT_LEADERBOARD`, and `ADSENSE_SLOT_RECTANGLE`.
+- Set `ADSENSE_ENABLED = true` in `src/utils/config.js` to go live with ads.
 - **Note:** AdSense approval can take days to weeks — apply early.
 
 ## 4. Set up Buy Me a Coffee

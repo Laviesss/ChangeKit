@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import RepoInput from '../components/RepoInput';
 import DonateButton from '../components/DonateButton';
-import { Sparkles, Terminal, ShieldCheck, Zap, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Terminal, ShieldCheck, Zap } from 'lucide-react';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [showSuccessToast, setShowSuccessToast] = useState(false);
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-
-  useEffect(() => {
-    if (searchParams.get('pro') === 'activated') {
-      setShowSuccessToast(true);
-      setTimeout(() => setShowSuccessToast(false), 5000);
-    }
-  }, [searchParams]);
 
   const handleGenerate = (data) => {
     setLoading(true);
@@ -25,16 +16,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Pro Success Toast */}
-      {showSuccessToast && (
-        <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-top-4 duration-500">
-          <div className="bg-[#5B2D8E] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-purple-400/30">
-            <CheckCircle2 className="h-5 w-5" />
-            <span className="font-bold">Pro unlocked! Enjoy unlimited commits 🎉</span>
-          </div>
-        </div>
-      )}
-
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-20">
         <div className="w-full max-w-4xl text-center space-y-12">
           {/* Hero Section */}
