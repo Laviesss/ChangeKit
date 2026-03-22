@@ -5,7 +5,7 @@
 
 // --- PAYHIP (Payments) ---
 export const PAYHIP_PRODUCT_URL = "https://payhip.com/placeholder"; // TODO: replace with your Payhip product page URL
-export const PAYHIP_API_KEY = "placeholder"; // TODO: replace with your Payhip API key
+export const VERIFY_ENDPOINT = "/api/verify";
 
 // --- ADSENSE (Ads) ---
 export const ADSENSE_CLIENT_ID = "ca-pub-placeholder"; // TODO: replace with your AdSense publisher ID

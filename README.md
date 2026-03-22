@@ -17,8 +17,11 @@ Hey! This is your personal guide for setting up and deploying ChangeKit. Follow 
 - Copy the product page URL.
 - Paste it into `src/utils/config.js` as `PAYHIP_PRODUCT_URL`.
 - In Payhip dashboard → **Account** → **Settings** → **Developer** → copy your **API Key**.
-- Paste it into `src/utils/config.js` as `PAYHIP_API_KEY`.
-- **Note:** Since this is a serverless app, the API key is exposed on the frontend. This is okay for license verification as it's read-only for that purpose, but keep it in mind.
+- In Vercel dashboard → ChangeKit project → **Settings** → **Environment Variables** → add:
+    - **Key:** `PAYHIP_API_KEY`
+    - **Value:** (your Payhip API key)
+    - **Environment:** Production + Preview + Development
+- **Note:** The API key is now securely handled by the `/api/verify.js` serverless function and is never exposed to the frontend.
 
 ## 3. Set up Google AdSense
 
@@ -46,4 +49,4 @@ Hey! This is your personal guide for setting up and deploying ChangeKit. Follow 
 
 ---
 
-**Note:** No backend or database is required. Everything runs in the browser, and payments/ads are handled by external services.
+**Note:** No backend or database is required. Everything runs in the browser, and payments/ads are handled by external services. For technical details on the license verification, see `PLATFORM_NOTES.md`.

@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, createContext, useContext } from 'react';
-import { PAYHIP_PRODUCT_URL, PAYHIP_API_KEY } from '../utils/config';
+import { useState, createContext, useContext } from 'react';
+import { PAYHIP_PRODUCT_URL, VERIFY_ENDPOINT } from '../utils/config';
 
 const ProContext = createContext();
 
@@ -12,17 +12,17 @@ export function ProProvider({ children }) {
     if (!licenseKey) return false;
 
     try {
-      const response = await fetch(
-        `https://payhip.com/api/v1/license/verify?product_link=${encodeURIComponent(PAYHIP_PRODUCT_URL)}&license_key=${encodeURIComponent(licenseKey)}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${PAYHIP_API_KEY}`
-          }
-        }
-      );
+      const response = await fetch(VERIFY_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          licenseKey,
+          productUrl: PAYHIP_PRODUCT_URL,
+        }),
+      });
 
-      const result = await response.json();
-      if (result.data && result.data.status === 'active') {
+      const data = await response.json();
+      if (data.valid === true) {
         localStorage.setItem('ck_pro', 'true');
         localStorage.setItem('ck_license', licenseKey);
         setIsPro(true);
