@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <ProActivator />
-      <div className="min-h-screen bg-background text-white font-sans text-base antialiased">
+      <div className="min-h-screen bg-[#0f0f0f] text-white font-sans text-base antialiased">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/result" element={<Result />} />

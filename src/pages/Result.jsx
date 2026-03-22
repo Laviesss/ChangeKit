@@ -80,7 +80,7 @@ export default function Result() {
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-6">
-        <Loader2 className="h-12 w-12 text-purple-accent animate-spin" />
+        <Loader2 className="h-12 w-12 text-[#5B2D8E] animate-spin" />
         <p className="text-xl font-bold text-gray-400">Fetching commits from GitHub...</p>
       </div>
     );
@@ -109,7 +109,7 @@ export default function Result() {
       {/* Pro Success Toast */}
       {showSuccessToast && (
         <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-top-4 duration-500">
-          <div className="bg-purple-accent text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-purple-400/30">
+          <div className="bg-[#5B2D8E] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-purple-400/30">
             <CheckCircle2 className="h-5 w-5" />
             <span className="font-bold">Pro unlocked! Enjoy unlimited commits 🎉</span>
           </div>
@@ -123,7 +123,7 @@ export default function Result() {
             Back to Home
           </Link>
           <h1 className="text-3xl font-extrabold flex items-center gap-3">
-            <div className="p-2 bg-purple-accent rounded-lg">
+            <div className="p-2 bg-[#5B2D8E] rounded-lg">
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             {repoData.owner}/{repoData.repo}
@@ -162,7 +162,7 @@ export default function Result() {
 
       <footer className="mt-24 pt-12 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-purple-accent rounded-lg flex items-center justify-center font-black text-white italic">C</div>
+          <div className="w-8 h-8 bg-[#5B2D8E] rounded-lg flex items-center justify-center font-black text-white italic">C</div>
           <span className="font-bold text-gray-400">ChangeKit © {new Date().getFullYear()}</span>
         </div>
         <DonateButton />

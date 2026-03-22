@@ -28,7 +28,7 @@ export default function PaywallBanner() {
             href={LEMON_SQUEEZY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center px-8 py-3 bg-purple-accent hover:bg-opacity-90 text-white font-bold rounded-xl shadow-lg shadow-purple-900/20 transform active:scale-95 transition-all w-full md:w-auto"
+            className="flex items-center justify-center px-8 py-3 bg-[#5B2D8E] hover:bg-opacity-90 text-white font-bold rounded-xl shadow-lg shadow-purple-900/20 transform active:scale-95 transition-all w-full md:w-auto"
           >
             Unlock Now
             <ArrowRight className="h-5 w-5 ml-2" />

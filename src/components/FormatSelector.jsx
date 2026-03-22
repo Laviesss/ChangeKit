@@ -22,7 +22,7 @@ export default function FormatSelector({ activeFormat, onFormatChange }) {
           className={cn(
             "flex items-center px-5 py-2 text-sm font-semibold rounded-lg transition-all",
             activeFormat === format.id
-              ? "bg-purple-accent text-white shadow-lg scale-105"
+              ? "bg-[#5B2D8E] text-white shadow-lg scale-105"
               : "text-gray-400 hover:text-white hover:bg-white hover:bg-opacity-5"
           )}
         >

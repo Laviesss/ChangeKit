@@ -44,7 +44,7 @@ export default function RepoInput({ onGenerate, loading }) {
               placeholder="https://github.com/owner/repo or owner/repo"
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
-              className="block w-full pl-10 pr-3 py-3 bg-[#1a1a1a] border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-accent focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-3 py-3 bg-[#1a1a1a] border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B2D8E] focus:border-transparent transition-all"
             />
           </div>
           {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
@@ -70,7 +70,7 @@ export default function RepoInput({ onGenerate, loading }) {
               placeholder="ghp_xxxxxxxxxxxx"
               value={token}
               onChange={(e) => setToken(e.target.value)}
-              className="block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-accent"
+              className="block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B2D8E]"
             />
             <p className="text-xs text-gray-500">
               Tokens are stored only in your browser's localStorage.
@@ -81,7 +81,7 @@ export default function RepoInput({ onGenerate, loading }) {
         <button
           type="submit"
           disabled={loading || !repoUrl.trim()}
-          className="w-full flex items-center justify-center px-6 py-3 bg-purple-accent hover:bg-opacity-90 disabled:bg-opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg transform active:scale-95 transition-all"
+          className="w-full flex items-center justify-center px-6 py-3 bg-[#5B2D8E] hover:bg-opacity-90 disabled:bg-opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg transform active:scale-95 transition-all"
         >
           {loading ? (
             <>

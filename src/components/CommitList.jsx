@@ -6,7 +6,7 @@ export default function CommitList({ commits, limitReached }) {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold flex items-center">
-        <GitCommit className="h-5 w-5 mr-2 text-purple-accent" />
+        <GitCommit className="h-5 w-5 mr-2 text-[#5B2D8E]" />
         Commits
       </h2>
       <div className="bg-[#1a1a1a] border border-gray-800 rounded-xl overflow-hidden divide-y divide-gray-800">
@@ -44,7 +44,7 @@ export default function CommitList({ commits, limitReached }) {
         ))}
       </div>
       {limitReached && (
-        <div className="p-3 bg-purple-accent bg-opacity-10 border border-purple-accent border-opacity-30 rounded-lg text-sm text-purple-300 text-center">
+        <div className="p-3 bg-[#5B2D8E] bg-opacity-10 border border-[#5B2D8E] border-opacity-30 rounded-lg text-sm text-purple-300 text-center">
           Free tier limit reached. Only showing the last 10 commits.
         </div>
       )}
