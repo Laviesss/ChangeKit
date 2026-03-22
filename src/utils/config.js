@@ -14,7 +14,7 @@ export const ADSENSE_SLOT_RECTANGLE = "placeholder"; // TODO: replace with your 
 export const ADSENSE_ENABLED = false; // Set to true once AdSense is approved
 
 // --- DONATE ---
-export const DONATE_URL = "https://placeholder.buymeacoffee.com"; // TODO: replace with your Buy Me a Coffee URL
+export const DONATE_URL = "https://ko-fi.com/placeholder"; // TODO: replace with your Ko-fi URL
 
 // --- APP SETTINGS ---
 export const FREE_COMMIT_LIMIT = 10; // Number of commits free users can generate
