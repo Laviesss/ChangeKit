@@ -4,7 +4,7 @@
 // ============================================
 
 // --- PAYHIP (Payments) ---
-export const PAYHIP_PRODUCT_URL = "https://payhip.com/placeholder"; // TODO: replace with your Payhip product page URL
+export const PAYHIP_PRODUCT_URL = "https://payhip.com/b/tfl25";
 export const VERIFY_ENDPOINT = "/api/verify";
 
 // --- ADSENSE (Ads) ---
@@ -14,7 +14,7 @@ export const ADSENSE_SLOT_RECTANGLE = "placeholder"; // TODO: replace with your 
 export const ADSENSE_ENABLED = false; // Set to true once AdSense is approved
 
 // --- DONATE ---
-export const DONATE_URL = "https://ko-fi.com/placeholder"; // TODO: replace with your Ko-fi URL
+export const DONATE_URL = "https://ko-fi.com/laviesss";
 
 // --- APP SETTINGS ---
 export const FREE_COMMIT_LIMIT = 10; // Number of commits free users can generate

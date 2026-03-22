@@ -31,9 +31,9 @@ Hey! This is your personal guide for setting up and deploying ChangeKit. Follow 
 - Set `ADSENSE_ENABLED = true` in `src/utils/config.js` to go live with ads.
 - **Note:** AdSense approval can take days to weeks — apply early.
 
-## 4. Set up Buy Me a Coffee
+## 4. Set up Ko-fi
 
-- Go to [buymeacoffee.com](https://buymeacoffee.com) and create a free account.
+- Go to [ko-fi.com](https://ko-fi.com) and create a free account.
 - Copy your profile URL.
 - Paste it into `src/utils/config.js` as `DONATE_URL`.
 
